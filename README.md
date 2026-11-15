@@ -12,9 +12,9 @@
 | `apk/JuchaMate-debug.apk` | 디버그 빌드 APK (2026-11-15 빌드, 약 43 MB) |
 | `source/` | 앱 전체 소스(Kotlin, Jetpack Compose)와 엔진 테스트 30개. 기능 설명은 `source/README.md` |
 | `screenshots_emulator/` | Pleos Connect 에뮬레이터에서 찍은 실제 앱 화면 10장 |
-| `demo_simulation/` | 시뮬레이션 영상 3개와 화면 이미지 5장 |
+| `demo_simulation/parkcoach_editor_demo.mp4` | 시뮬레이션 영상(75초): 주차 코스 → 내 주차장 만들기 → 시작 전 안전 확인 → 안내를 받은 주차 |
 
-`demo_simulation/`의 영상과 이미지는 실제 차량이나 에뮬레이터 화면이 아니라, 앱의 화면 그리기 코드를 그대로 써서 만든 시뮬레이션입니다. 이름을 바꾸기 전에 만들어 처음 이름(파킹코치)과 이전 화면 디자인이 들어 있습니다.
+`demo_simulation/`의 영상은 실제 차량이나 에뮬레이터 화면이 아니라, 앱의 화면 그리기 코드를 그대로 써서 만든 시뮬레이션입니다. 이름을 바꾸기 전에 만들어 처음 이름(파킹코치)이 들어 있습니다.
 
 `source/README.md`는 11월 15일의 화면 변경(두 갈래로 시작하는 첫 화면, 설정 화면, '내 자리'의 진입 방향 읽기) 전에 쓴 설명이라 첫 화면 설명이 지금 화면과 조금 다릅니다.
 
