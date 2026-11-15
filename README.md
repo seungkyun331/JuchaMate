@@ -9,7 +9,7 @@
 
 | 경로 | 내용 |
 | --- | --- |
-| `apk/JuchaMate-debug.apk` | 디버그 빌드 APK (2026-11-15 빌드, 약 43 MB) |
+| `apk/안전의 조건_주차메이트_release.apk` | release 빌드 APK (2026-11-15 빌드, 약 43 MB) |
 | `source/` | 앱 전체 소스(Kotlin, Jetpack Compose)와 엔진 테스트 30개. 기능 설명은 `source/README.md` |
 | `screenshots_emulator/` | Pleos Connect 에뮬레이터에서 찍은 실제 앱 화면 10장 |
 | `demo_simulation/parkcoach_editor_demo.mp4` | 시뮬레이션 영상(75초): 주차 코스 → 내 주차장 만들기 → 시작 전 안전 확인 → 안내를 받은 주차 |
@@ -18,11 +18,12 @@
 
 `source/README.md`는 11월 15일의 화면 변경(두 갈래로 시작하는 첫 화면, 설정 화면, '내 자리'의 진입 방향 읽기) 전에 쓴 설명이라 첫 화면 설명이 지금 화면과 조금 다릅니다.
 
-APK SHA-256: `d4618071c70b765c1b423000da4d3ada7a5accfa02c0274e777c75beda199482`
+APK SHA-256: `c43883228c396fb374227d6df46080e6c4abf69f91e25b33c529fb4a5477a6b9`
 
 ## 실행 환경
 
 - Pleos Connect Emulator v2.1.0 (Android Automotive, Android 14 / API 34)
+- 화면 규격: 2560×1440 px, 160 dpi, 가로
 - Android Studio와 Android SDK Platform-Tools(`adb`)
 
 에뮬레이터 이미지는 Android Studio의 SDK Manager → SDK Update Sites에 아래 주소를 추가해 받았습니다.
@@ -37,7 +38,7 @@ AVD는 Automotive 기기에 Pleos API 34 이미지로 만들고 **Cold Boot**로
 에뮬레이터를 켠 뒤 이 폴더에서 실행합니다.
 
 ```
-adb install -r apk/JuchaMate-debug.apk
+adb install -r "apk/안전의 조건_주차메이트_release.apk"
 adb shell appops set com.parkcoach SYSTEM_ALERT_WINDOW allow
 adb forward tcp:8088 tcp:8088
 ```
@@ -86,6 +87,8 @@ curl "http://127.0.0.1:8088/vehicle/state"
 ```
 
 첫 줄은 엔진 테스트 30개, 둘째 줄은 APK 빌드(`app/build/outputs/apk/debug/app-debug.apk`), 셋째 줄은 Pleos 저장소에 닿지 않을 때의 빌드입니다.
+
+`apk/`의 APK는 `./gradlew :app:assembleRelease`로 만든 release 빌드(`app/build/outputs/apk/release/app-release.apk`)입니다. 누구나 빌드해 설치할 수 있도록 디버그 키로 서명했습니다. 다른 키로 서명한 이전 APK가 설치되어 있으면 `adb uninstall com.parkcoach`로 지운 뒤 설치합니다.
 
 ## 안전과 한계
 
