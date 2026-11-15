@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- A parking P whose bowl is a stretching arm: a dot for the head, a bar for the body. -->
+    <path
+        android:fillColor="#FF07130B"
+        android:pathData="M40,32h18a14,14 0,0 1,0 28h-9v16h-9zM49,40v12h8a6,6 0,0 0,0 -12z" />
+    <path
+        android:fillColor="#FF07130B"
+        android:pathData="M72,34a4,4 0,1 1,0 8a4,4 0,0 1,0 -8z" />
+</vector>
